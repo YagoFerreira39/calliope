@@ -3,9 +3,11 @@ from fastapi import FastAPI
 from src.routers.upload_files_routers.files_router import FilesRouter
 
 
-
 class BaseRouter:
-    app_v1 = FastAPI()
+    app_v1 = FastAPI(
+        title="Calliope",
+        version="0.0.1"
+    )
 
     @classmethod
     def _initialize_routes(cls) -> FastAPI:
